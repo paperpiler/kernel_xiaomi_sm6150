@@ -791,7 +791,7 @@ static int snd_compr_drain(struct snd_compr_stream *stream)
 		retval = -EPERM;
 		goto ret;
 	case SNDRV_PCM_STATE_XRUN:
-		return -EPIPE;
+		retval = -EPIPE;
 		goto ret;
 	default:
 		break;
